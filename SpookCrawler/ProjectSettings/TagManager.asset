@@ -44,3 +44,6 @@ TagManager:
   - name: Player
     uniqueID: 3157058803
     locked: 0
+  - name: NonShadow
+    uniqueID: 3931080053
+    locked: 0

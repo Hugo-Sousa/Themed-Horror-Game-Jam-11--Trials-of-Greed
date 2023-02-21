@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movement;
     
     public Animator anim;
+
+    public bool death;
     
     void Start()
     {
@@ -18,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        if (death)
+        {
+            
+        }
+        
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         
