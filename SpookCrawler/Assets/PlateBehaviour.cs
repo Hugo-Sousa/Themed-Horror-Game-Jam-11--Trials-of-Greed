@@ -4,22 +4,18 @@ using UnityEngine;
 
 public class PlateBehaviour : MonoBehaviour
 {
-    [SerializeField] BoulderMovement boulder;
+    public GameObject boulderPrefab;
 
     private Vector3 originalPos;
     private bool isActivated = false;
     private Vector3 platePressed = new Vector3(0f, -0.15f, 0f);
 
+    public Transform spawnBoulder;
+
     // Start is called before the first frame update
     void Start()
     {
         originalPos = transform.position;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -28,8 +24,9 @@ public class PlateBehaviour : MonoBehaviour
         {
             isActivated = true;
             this.GetComponent<Collider2D>().enabled = false;
-            transform.position += platePressed;
-            boulder.Activate();
+            //transform.position += platePressed;
+            GameObject boulder = Instantiate(boulderPrefab, spawnBoulder.position, boulderPrefab.transform.rotation);
+            boulder.GetComponent<BoulderMovement>().Activate();
         }       
     }
 }

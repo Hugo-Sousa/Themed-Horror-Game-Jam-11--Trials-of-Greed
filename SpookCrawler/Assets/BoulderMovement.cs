@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class BoulderMovement : MonoBehaviour
 {
-    private float initialVelocity = 3.0f;
+    private float initialVelocity = .5f;
     private float acceleration = 0.1f;
     private float topSpeed = 6.0f;
 
     private Rigidbody2D rb;
-    private bool isActivated = false;
-    private bool isMoving = false;
+    public bool isActivated = false;
+    public bool isMoving = false;
 
     private int Respawn;
 
@@ -24,11 +24,6 @@ public class BoulderMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (isActivated)
-        {
-            rb.velocity = new Vector2(initialVelocity, 0f);
-            isMoving = true;
-        }
     }
 
     private void FixedUpdate()
@@ -45,6 +40,12 @@ public class BoulderMovement : MonoBehaviour
         if(col.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(Respawn);
+        }
+
+        if (col.gameObject.layer == 8)
+        {
+            rb.velocity = new Vector2(initialVelocity, 0f);
+            isMoving = true;
         }
     }
 
