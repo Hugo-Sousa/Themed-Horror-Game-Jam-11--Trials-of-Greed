@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (death)
         {
-            
+            anim.SetBool("Death", true);
         }
         
         movement.x = Input.GetAxisRaw("Horizontal");
