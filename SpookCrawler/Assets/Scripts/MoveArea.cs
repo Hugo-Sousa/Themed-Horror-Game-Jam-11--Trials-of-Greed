@@ -26,7 +26,7 @@ public class MoveArea : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && PlayerIn)
+        if (PlayerIn)
         {
             if (isForward)
             {
