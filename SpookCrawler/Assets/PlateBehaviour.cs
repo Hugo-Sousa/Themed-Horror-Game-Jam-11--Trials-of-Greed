@@ -6,16 +6,17 @@ public class PlateBehaviour : MonoBehaviour
 {
     public GameObject boulderPrefab;
 
-    private Vector3 originalPos;
-    private bool isActivated = false;
-    private Vector3 platePressed = new Vector3(0f, -0.15f, 0f);
+    private Animator anim;
+    
+    public bool isActivated;
+    public bool isInverted;
 
     public Transform spawnBoulder;
 
     // Start is called before the first frame update
     void Start()
     {
-        originalPos = transform.position;
+        anim = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -23,10 +24,17 @@ public class PlateBehaviour : MonoBehaviour
         if(col.transform.name == "Player" && !isActivated)
         {
             isActivated = true;
-            this.GetComponent<Collider2D>().enabled = false;
-            //transform.position += platePressed;
+            GetComponent<Collider2D>().enabled = false;
+            anim.SetBool("Pressed",true);
             GameObject boulder = Instantiate(boulderPrefab, spawnBoulder.position, boulderPrefab.transform.rotation);
+
+            if (isInverted)
+            {
+                boulder.GetComponent<Rigidbody2D>().gravityScale = -1;
+            }
+            
             boulder.GetComponent<BoulderMovement>().Activate();
         }       
     }
+    
 }

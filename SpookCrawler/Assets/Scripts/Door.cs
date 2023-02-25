@@ -26,7 +26,7 @@ public class Door : MonoBehaviour
                 anim.SetBool("Open",true);
                 IsOpen = true;
             }
-            
+
         }
     }
 

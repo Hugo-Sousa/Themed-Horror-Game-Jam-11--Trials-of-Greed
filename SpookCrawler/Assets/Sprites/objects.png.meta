@@ -607,6 +607,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: coffin_open
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 116
+        width: 78
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 197cb4bf147edb84abb729bcc97cf30c
+      internalID: -2000866110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: coffin_closed
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 115
+        width: 81
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1d1655493a31574d9d9426d5b22749e
+      internalID: 947895139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -620,10 +662,12 @@ TextureImporter:
     nameFileIdTable:
       Pillar_top: -790882984
       Torch_02: 944482107
+      coffin_closed: 947895139
       Pedastal: 956346446
       Door_front_02: 2052759017
       Door_front_04: 1959688445
       Door_side_03: -917148398
+      coffin_open: -2000866110
       Torch_03: 1228410228
       Door_front_03: 218761181
       Door_H_02: -989966455

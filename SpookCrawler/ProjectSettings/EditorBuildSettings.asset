@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TitleScreen.unity
+    guid: e5844ada248d1e34fa0377dca1d828d5
+  - enabled: 1
     path: Assets/Scenes/Entrance Hall.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -15,6 +18,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Maze 1.unity
     guid: cc8b693b35f55ea4bbb74c6fb96f12e8
   - enabled: 1
+    path: Assets/Scenes/Maze 2.unity
+    guid: 965e695847a13d84ea736b6aa976115c
+  - enabled: 1
+    path: Assets/Scenes/Spike Coridor.unity
+    guid: 9f4d5e6816bdeb146aec28e7117d3698
+  - enabled: 1
+    path: Assets/Scenes/Maze 3.unity
+    guid: 06f3ac7c14f7ec34d89b941e6e3b0f39
+  - enabled: 1
     path: Assets/Scenes/Boulder Corridor.unity
     guid: c249bee094299d448b41525b67913ad5
+  - enabled: 1
+    path: Assets/Scenes/Maze 4.unity
+    guid: 4884d7f1bad3c944694cc2028b2274d8
+  - enabled: 1
+    path: Assets/Scenes/Sand Corridor.unity
+    guid: 7d6f694fede1b2b4d9c14cdfd2a69086
+  - enabled: 1
+    path: Assets/Scenes/Maze 5.unity
+    guid: 8193bf1375a3eb74e92fcf36a97df44d
+  - enabled: 1
+    path: Assets/Scenes/Last Corridor.unity
+    guid: 47239c36302b0c447bc481fd188e587e
+  - enabled: 1
+    path: Assets/Scenes/Final Room.unity
+    guid: eb8aaf4b876cb0442bf3f62b703d15f5
   m_configObjects: {}
