@@ -21,6 +21,7 @@ public class Mummy : MonoBehaviour
     private int pastPatrol;
     
     public bool playerDetected;
+    private Vision vision;
     
     private bool chase;
     
@@ -29,6 +30,7 @@ public class Mummy : MonoBehaviour
         anim = GetComponent<Animator>();
         aiPath = GetComponentInParent<AIPath>();
         targetStetter = GetComponentInParent<AIDestinationSetter>();
+        vision = GetComponentInChildren<Vision>();
 
         pastPatrol = int.Parse(targetStetter.target.gameObject.name);
     }
@@ -38,18 +40,15 @@ public class Mummy : MonoBehaviour
         anim.SetFloat("Horizontal", aiPath.desiredVelocity.x*10);
         anim.SetFloat("Vertical", aiPath.desiredVelocity.y*10);
 
-        if (playerDetected && !chase)
+        if ((playerDetected || vision.playerDetected) && !chase)
         {
             targetStetter.target = player.transform;
             chase = true;
             StartCoroutine(SpeedBoost());
         }
         
-        if (aiPath.reachedDestination && !playerDetected)
+        if (aiPath.reachedDestination && !(playerDetected || vision.playerDetected))
         {
-            if (chase)
-            { chase = false; }
-            
             targetStetter.target.position = PickRandomPoint();
             aiPath.SearchPath();
         }
@@ -75,7 +74,7 @@ public class Mummy : MonoBehaviour
         patrolLight.gameObject.SetActive(false);
         chaseLight.gameObject.SetActive(true);
         
-        while (playerDetected)
+        while (playerDetected || vision.playerDetected)
         {
             aiPath.maxSpeed = 2;
             yield return new WaitForSeconds(2);
@@ -84,6 +83,7 @@ public class Mummy : MonoBehaviour
         
         patrolLight.gameObject.SetActive(true);
         chaseLight.gameObject.SetActive(false);
+        chase = false;
         aiPath.maxSpeed = 1f;
         targetStetter.target = patrolPoints[0];
         aiPath.SearchPath();
