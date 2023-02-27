@@ -4191,5 +4191,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global Light 2D
       objectReference: {fileID: 0}
+    - target: {fileID: 5366578113047591518, guid: a17d46305b9277f47970c5a4d6b351aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a17d46305b9277f47970c5a4d6b351aa, type: 3}
