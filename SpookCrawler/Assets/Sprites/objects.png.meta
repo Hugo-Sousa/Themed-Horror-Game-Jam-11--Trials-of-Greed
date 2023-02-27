@@ -662,7 +662,7 @@ TextureImporter:
     nameFileIdTable:
       Pillar_top: -790882984
       Torch_02: 944482107
-      coffin_closed: 947895139
+      Ahnk: -1266266905
       Pedastal: 956346446
       Door_front_02: 2052759017
       Door_front_04: 1959688445
@@ -685,7 +685,7 @@ TextureImporter:
       Pressure_plate: 872599470
       Weak_wall_02: -2094895896
       Pillar_bottom: -527716434
-      Ahnk: -1266266905
+      coffin_closed: 947895139
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
