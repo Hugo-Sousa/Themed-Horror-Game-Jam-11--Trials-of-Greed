@@ -25,7 +25,7 @@ EditorBuildSettings:
     guid: 9f4d5e6816bdeb146aec28e7117d3698
   - enabled: 1
     path: Assets/Scenes/Maze 3.unity
-    guid: 06f3ac7c14f7ec34d89b941e6e3b0f39
+    guid: 91b470925a5ffa74fa555716a1fd80df
   - enabled: 1
     path: Assets/Scenes/Boulder Corridor.unity
     guid: c249bee094299d448b41525b67913ad5
