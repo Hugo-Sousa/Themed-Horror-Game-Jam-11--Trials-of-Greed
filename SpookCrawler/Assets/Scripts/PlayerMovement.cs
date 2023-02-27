@@ -37,9 +37,11 @@ public class PlayerMovement : MonoBehaviour
         Controller();
     }
     
-    private void Controller()
-    {
+    private void Controller() {
+
+        movement.Normalize();
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+       
     }
 
     public void ChangeScale(float scale)
