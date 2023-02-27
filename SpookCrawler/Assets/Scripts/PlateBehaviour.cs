@@ -13,16 +13,20 @@ public class PlateBehaviour : MonoBehaviour
 
     public Transform spawnBoulder;
 
+    private AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
     }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
         if(col.transform.name == "Player" && !isActivated)
         {
+            source.Play();
             isActivated = true;
             GetComponent<Collider2D>().enabled = false;
             anim.SetBool("Pressed",true);

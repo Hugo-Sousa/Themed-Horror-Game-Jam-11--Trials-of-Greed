@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 2198083333979508013}
   - component: {fileID: 2198083333979508015}
   - component: {fileID: 2198083333979508008}
+  - component: {fileID: 315153123998722626}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -568,6 +569,7 @@ MonoBehaviour:
   rb: {fileID: 2198083333979508015}
   anim: {fileID: 2198083333979508008}
   death: 0
+  chase: 0
 --- !u!61 &2198083333979508013
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -635,6 +637,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &315153123998722626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198083333979508002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04c56019ae42aa4c9d9dcb8202d1474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 8300000, guid: 9f2e19549016fbd499359372e4cd1557, type: 3}
+  chase: {fileID: 8300000, guid: 27bd238da3b6c2d47bf53656f052ad73, type: 3}
+  death: {fileID: 8300000, guid: d8640a26c7f74c049bd48a5493ac2dcc, type: 3}
+  source: {fileID: 228567751102781647}
 --- !u!1 &6425166179898553072
 GameObject:
   m_ObjectHideFlags: 0
@@ -679,7 +697,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9f2e19549016fbd499359372e4cd1557, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0

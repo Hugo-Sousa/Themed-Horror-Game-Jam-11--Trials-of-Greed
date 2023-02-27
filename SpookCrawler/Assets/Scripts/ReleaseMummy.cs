@@ -9,6 +9,9 @@ public class ReleaseMummy : MonoBehaviour
     public GameObject aiObject;
 
     private bool released;
+    private PlayerMovement player;
+
+    public AudioClip openCoffin;
     
     void Update()
     {
@@ -17,6 +20,9 @@ public class ReleaseMummy : MonoBehaviour
             coffin.GetComponent<Animator>().SetBool("Open",true);
             aiObject.SetActive(true);
             released = true;
+            player.chase = true;
+            GetComponent<AudioSource>().clip = openCoffin;
+            GetComponent<AudioSource>().Play();
         }
     }
     
@@ -25,6 +31,7 @@ public class ReleaseMummy : MonoBehaviour
         if (other.gameObject.layer == 6 )
         {
             PlayerIn = true;
+            player = other.gameObject.GetComponent<PlayerMovement>();
         }
     }
     private void OnTriggerExit2D(Collider2D other)

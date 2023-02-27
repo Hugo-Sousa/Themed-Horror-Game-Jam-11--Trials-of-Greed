@@ -1855,6 +1855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coffin: {fileID: 19192378}
   aiObject: {fileID: 883916580}
+  openCoffin: {fileID: 8300000, guid: 7a2f6638c8d22f3438e1c3d06bcb1669, type: 3}
 --- !u!114 &1699767569 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4392123544408303741, guid: f2fa62e4ed4987c43ab7bdfa4315f688, type: 3}

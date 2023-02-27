@@ -33,6 +33,7 @@ public class Mummy : MonoBehaviour
         vision = GetComponentInChildren<Vision>();
 
         pastPatrol = int.Parse(targetStetter.target.gameObject.name);
+        GetComponent<AudioSource>().Play();
     }
     
     void Update()
@@ -101,6 +102,14 @@ public class Mummy : MonoBehaviour
         if (other.gameObject.layer == 6)
         {
             playerDetected = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.layer == 6 )
+        {
+            player.GetComponent<PlayerMovement>().death = true;
         }
     }
 }

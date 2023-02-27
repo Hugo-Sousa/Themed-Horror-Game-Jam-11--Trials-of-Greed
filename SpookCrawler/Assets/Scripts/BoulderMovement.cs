@@ -15,10 +15,19 @@ public class BoulderMovement : MonoBehaviour
 
     private int Respawn;
 
+    public AudioClip fall;
+    public AudioClip roll;
+
+    private AudioSource source;
+
     // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
+
+        source.clip = fall;
+        source.Play();
     }
 
     // Update is called once per frame
@@ -37,15 +46,20 @@ public class BoulderMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Player")
+        if (col.gameObject.layer == 6 )
         {
-            SceneManager.LoadScene(Respawn);
+            col.gameObject.GetComponent<PlayerMovement>().death = true;
         }
 
         if (col.gameObject.layer == 8)
         {
             rb.velocity = new Vector2(initialVelocity, 0f);
             isMoving = true;
+            
+            source.Stop();
+            source.clip = roll;
+            source.loop = false;
+            source.Play();
         }
     }
 

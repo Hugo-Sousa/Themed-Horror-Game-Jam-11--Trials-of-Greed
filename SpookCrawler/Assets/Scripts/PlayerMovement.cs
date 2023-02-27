@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,29 +13,33 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
 
     public bool death;
-    
-    void Start()
-    {
-        
-    }
-    
+    private bool died;
+    public bool chase;
+
     void Update()
     {
-        if (death)
+        if (death && !died)
         {
+            died = true;
             anim.SetBool("Death", true);
+            StartCoroutine(Death());
         }
+        else
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
         
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-        
-        anim.SetFloat("Horizontal", movement.x);
-        anim.SetFloat("Vertical", movement.y);
+            anim.SetFloat("Horizontal", movement.x);
+            anim.SetFloat("Vertical", movement.y);
+        }
     }
     
     private void FixedUpdate()
     {
-        Controller();
+        if (!death)
+        {
+            Controller();   
+        }
     }
     
     private void Controller() {
@@ -47,5 +52,11 @@ public class PlayerMovement : MonoBehaviour
     public void ChangeScale(float scale)
     {
         transform.localScale = new Vector3(scale, scale, 1);
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

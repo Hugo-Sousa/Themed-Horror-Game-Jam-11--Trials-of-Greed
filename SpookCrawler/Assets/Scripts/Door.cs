@@ -12,10 +12,14 @@ public class Door : MonoBehaviour
     public bool HasKey;
 
     private bool PlayerIn;
+
+    public AudioClip open;
+    private AudioSource source;
     
     void Start()
     {
         anim = GetComponentInParent<Animator>();
+        source = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -26,6 +30,8 @@ public class Door : MonoBehaviour
             {
                 anim.SetBool("Open",true);
                 IsOpen = true;
+                source.clip = open;
+                source.Play();
             }
 
         }

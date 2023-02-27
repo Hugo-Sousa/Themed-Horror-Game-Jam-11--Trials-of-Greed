@@ -11,7 +11,16 @@ public class AssignTorch : MonoBehaviour
 
     public GameObject objectToRemove;
 
+    public AudioClip relicFound;
+    private AudioSource source;
+
     public Door door;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && PlayerIn)
@@ -19,6 +28,8 @@ public class AssignTorch : MonoBehaviour
             PlayerTorch.GetComponentInChildren<Light2D>().enabled = true;
             door.HasKey = true;
             objectToRemove.SetActive(false);
+            source.clip = relicFound;
+            source.Play();
         }
     }
 
